@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caz - Minecraft Server Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #4b0082, #360065, #1a001e);
+            color: #ffffff;
+            margin: 0;
+            overflow-x: hidden;
+            position: relative;
+            scroll-behavior: smooth;
+            cursor: url('https://assets.onecompiler.app/42wtznc2y/42wzz4gub/png-transparent-minecraft-diamond-pickaxe-illustration-minecraft-pocket-edition-pickaxe-mod-mining-angle-text-square-removebg-preview.png'), auto;
+        }
+
+        h1, h2, h3 {
+            color: #c896ff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* Running Text Effect */
+        .running-text {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #360065;
+            color: #ffffff;
+            font-size: 1.5rem;
+            z-index: 1000;
+            padding: 5px 0;
+        }
+
+        .running-text span {
+            display: inline-block;
+            animation: slide 10s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #2a2d35;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            z-index: 1000;
+            display: none; /* Initially hidden */
+        }
+
+        .menu-bar ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .menu-bar ul li {
+            margin: 20px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-bar ul li:hover {
+            color: #a674e4;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        /* About Section */
+        .about-section {
+            margin: 80px auto;
+            width: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .about-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-section strong {
+            color: #a674e4;
+            font-weight: 600;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .project-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .project-box img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #360065;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Fade In Effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Running Text -->
+    <div class="running-text">
+        <span>CAZ - Minecraft Server Developer | Expert in Configurations and Custom Scripts | Contact for Quality Work!</span>
+    </div>
+
+    <!-- Rain Effect -->
+    <div class="rain" id="rain"></div>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar" id="menu-bar">
+        <div class="logo">
+            <img src="https://assets.onecompiler.app/42wtznc2y/42wzz4gub/png-transparent-minecraft-diamond-pickaxe-illustration-minecraft-pocket-edition-pickaxe-mod-mining-angle-text-square-removebg-preview.png" alt="Logo">
+        </div>
+        <ul>
+            <li onclick="navigateTo('about')">About</li>
+            <li onclick="navigateTo('projects')">Projects</li>
+            <li onclick="window.open('https://www.instagram.com/anandhu_0_0_', '_blank')">Buy</li>
+        </ul>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div style="position: fixed; top: 20px; left: 20px; font-size: 2em; color: white; cursor: pointer;" onclick="toggleMenu()">☰</div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-section">
+            <h2>About Me</h2>
+            <p>
+                Hey! My name is <strong>Caz</strong>, and I'm 17. I am a <strong>Minecraft server developer</strong> with 2+ years of experience and have served 20+ clients. I am an experienced developer and have gotten many positive reviews about my service, which is posted on my <a href="https://www.instagram.com/anandhu_0_0_" target="_blank">Instagram account</a>.
+            </p>
+            <p>
+                I also sometimes make <strong>Discord bots</strong> whenever I am free and also do paid work. For Minecraft servers, I do:
+                <ul>
+                    <li>Server setups</li>
+                    <li>Configuration</li>
+                    <li>Skripting</li>
+                    <li>Proxy setups</li>
+                    <li>Anything else a Minecraft server developer can do</li>
+                </ul>
+            </p>
+            <p>
+                <strong>Service Quality:</strong> You don't have to worry about my quality and effort as I get the work done within the time frame with quality. I have many server owners who are satisfied with my service, as you can see in the reviews below.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <!-- Add your projects here -->
+            <div class="project-box">
+                <img src="https://media.discordapp.net/attachments/1308793887908954113/1309215238343757894/IMG_20241121_232311.jpg?ex=67416df4&is=67401c74&hm=97d37da1491e10518e69fc6f92ab1a1e66e7dc827e7534141c2f3faf31aa43ea&=&format=webp&width=637&height=632" alt="SunTitansMC">
+                <h3>SunTitansMC</h3>
+                <p>Head Developer - Specialized in server architecture and custom plugins.</p>
+            </div>
+            <div class="project-box">
+                <img src="https://media.discordapp.net/attachments/1308793887908954113/1309215319230779403/IMG_20241121_232406.jpg?ex=67416e08&is=67401c88&hm=ef998d21bd8461cfed88fb0f56d2ccdf34b3fbacdef4c1ef71a00b36e9caf5c3&=&format=webp&width=667&height=632" alt="FateSMP">
+                <h3>FateSMP</h3>
+                <p>Sr. Manager & Developer - Managed server setup and proxy integration.</p>
+            </div>
+            <div class="project-box">
+                <img src="https://media.discordapp.net/attachments/1308793887908954113/1309215237764943902/image.jpg?ex=67416df4&is=67401c74&hm=cc68b857c9da788c2d24c3172431c09d05f22d6d1651448bbf3e4cded1c1e49c&=&format=webp&width=632&height=632" alt="AngelicMC">
+                <h3>AngelicMC</h3>
+                <p>Developer - Worked on custom scripting and player economy systems.</p>
+            </div>
+            <div class="project-box">
+                <img src="https://media.discordapp.net/attachments/1308793887908954113/1309218029099552830/Screenshot_2024-11-21-23-34-49-33_572064f74bd5f9fa804b05334aa4f912.jpg?ex=6741708e&is=67401f0e&hm=cc7bb3d8b57b90c2e7603de8938f120e2d90cfecb5322aa331cee4732e1ff71d&=&format=webp&width=221&height=228" alt="ExoticNetwork">
+                <h3>ExoticNetwork</h3>
+                <p>Ex-Developer - Developed mini-games and event management tools.</p>
+            </div>
+            <div class="project-box">
+                <img src="https://media.discordapp.net/attachments/1308793887908954113/1309215237442109460/IMG_20241121_232249.jpg?ex=67416df4&is=67401c74&hm=fa8da73b1035cecea442e61c58d4e278d1aa48e343a33b7456b29208445fec5b&=&format=webp&width=645&height=632" alt="Enchantia">
+                <h3>Enchantia</h3>
+                <p>Ex-Developer - Designed custom worlds and improved performance optimizations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Caz.       Created by VSK.</p>
+    </footer>
+
+    <script>
+        // Toggle Menu Bar visibility
+        function toggleMenu() {
+            const menuBar = document.getElementById('menu-bar');
+            if (menuBar.style.display === 'none' || menuBar.style.display === '') {
+                menuBar.style.display = 'flex';
+            } else {
+                menuBar.style.display = 'none';
+            }
+        }
+
+        // Scroll to sections
+        function navigateTo(section) {
+            document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Generate Raindrops
+        const rainContainer = document.getElementById('rain');
+        function createRaindrop() {
+            const drop = document.createElement('div');
+            drop.classList.add('raindrop');
+            drop.style.left = `${Math.random() * 100}vw`;
+            drop.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            rainContainer.appendChild(drop);
+            setTimeout(() => drop.remove(), 3000);
+        }
+
+        setInterval(createRaindrop, 100);
+    </script>
+</body>
+</html>
